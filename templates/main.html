@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Заявки по 1С</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css" />
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src='/static/main.js'></script>
+ </head>
+
+ <body class="bg-light">
+    &nbsp; Здравствуйте, {{user.first_name}} {{user.last_name}}!
+           <button type="button" class='btn btn-default btn-sm' onclick='window.open("/logout");'>
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </button>
+
+        &nbsp;&nbsp;&nbsp; <button type="button" class="btn btn-success"  onclick="window.open('/editetask');">Новая заявка</button>
+
+<fieldset>
+         <legend>Фильтры</legend>
+    &nbsp;  Статус {{f.status}} &nbsp; Дата начала {{f.start}} &nbsp; Дата окончания {{f.finish}}
+     </fieldset>
+
+<div>
+ <iframe  id="IFRAME" style="position:absolute;top: 145px; width: 100%; height: 100%; left:5px; right: 5px;" src="/task_list/1/1/1/2001/1/1/2001"  align="left">
+    Ваш браузер не поддерживает плавающие фреймы!
+ </iframe>
+</div>
+
+ </body>
+</html>

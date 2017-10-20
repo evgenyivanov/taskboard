@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Редактирование задачи</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script
+
+
+  <link rel="stylesheet" type="text/css" href="/static/admin/css/base.css" />
+
+  <link rel="stylesheet" type="text/css" href="/static/admin/css/changelists.css" />
+
+
+    <script type="text/javascript" src="/admin/jsi18n/"></script>
+
+
+
+
+
+
+
+<script type="text/javascript" src="/static/admin/js/core.js"></script>
+<script type="text/javascript" src="/static/admin/js/vendor/jquery/jquery.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
+<script type="text/javascript" src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+<script type="text/javascript" src="/static/admin/js/actions.js"></script>
+<script type="text/javascript" src="/static/admin/js/urlify.js"></script>
+<script type="text/javascript" src="/static/admin/js/prepopulate.js"></script>
+<script type="text/javascript" src="/static/admin/js/vendor/xregexp/xregexp.min.js"></script>
+
+<script type="text/javascript">
+(function($) {
+    $(document).ready(function($) {
+        $("tr input.action-select").actions();
+    });
+})(django.jQuery);
+</script>
+
+<title>{{author}} Заявка № {{id}} от {{f.start}}</title>
+
+
+
+</head>
+<body
+
+{%for el in attachs%}
+<a />
+   &nbsp; <a href='/imgview/{{el}}' '_blank'> Файл № {{ forloop.counter }} </a>
+{%endfor%}
+
+    <div align="left">
+         <form class="form-group" method="POST" enctype="multipart/form-data" >
+                  {% csrf_token %}
+
+
+
+    <div style="display: none;">{{f.user}}</div>
+
+      <span style="color:red;">&nbsp;&nbsp;{{errors}}</span>
+      <div class="controls">
+         <label for="id_subject">&nbsp;&nbsp;Наименование:</label>
+         &nbsp;&nbsp;{{ f.title}}
+      </div>
+
+      <div class="controls">
+         <label for="id_subject">&nbsp;&nbsp;Дата начала:</label>
+         &nbsp;&nbsp;{{ f.start}}
+      </div>
+
+<p>&nbsp; Описание:<p>
+
+     <div class="controls">
+      &nbsp;&nbsp;   {{ f.description}}
+      </div>
+<p>&nbsp; Комментарий:<p>
+      <div class="controls">
+            &nbsp;&nbsp;  {{ f.comments}}
+      </div>
+
+
+       <div class="controls">
+         <label for="id_subject">&nbsp;&nbsp;Текущий статус:</label>
+         &nbsp;&nbsp;{{ f.status}}
+      </div>
+
+       <div class="controls">
+         <label for="id_subject">&nbsp;&nbsp;Дата окончания:</label>
+         &nbsp;&nbsp;{{ f.finish}}
+      </div>
+
+       <input type="file" id="file" name = "file" file val="" />
+
+
+       <p>&nbsp;&nbsp;<button type="submit">OK</button></p>
+
+
+     </form>
+     </div>
+
+</body>
+</html>
